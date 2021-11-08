@@ -10,7 +10,7 @@ RUN apt-get update \
     fontconfig \
   && rm -rf /var/lib/apt/lists/*
 
-ENV PROJECT_HOME=/srv/sciencebeam
+ENV PROJECT_HOME=/srv/sciencebeam-pipelines
 
 ENV VENV=${PROJECT_HOME}/venv
 RUN python3 -m venv ${VENV}

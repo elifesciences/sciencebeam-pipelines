@@ -8,9 +8,9 @@ services:
 
     sciencebeam-pipelines-dev:
         volumes:
-        - ./sciencebeam:/srv/sciencebeam/sciencebeam
-        - ./tests:/srv/sciencebeam/tests
-        - ./xslt:/srv/sciencebeam/xslt
+        - ./sciencebeam:/srv/sciencebeam-pipelines/sciencebeam
+        - ./tests:/srv/sciencebeam-pipelines/tests
+        - ./xslt:/srv/sciencebeam-pipelines/xslt
         environment:
             # avoid issues with .pyc/pyo files when mounting source directory
             PYTHONOPTIMIZE: ""
