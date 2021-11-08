@@ -62,6 +62,6 @@ RUN \
   && ls -l ${UNO_OFFICE_BINARY_PATH}
 
 # labels
-LABEL org.opencontainers.image.source="https://github.com/elifesciences/sciencebeam"
+LABEL org.opencontainers.image.source="https://github.com/elifesciences/sciencebeam-pipelines"
 LABEL org.opencontainers.image.revision="${commit}"
 LABEL org.opencontainers.image.version="${version}"
