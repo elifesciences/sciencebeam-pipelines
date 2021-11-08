@@ -7,7 +7,7 @@ This section details using or building the docker images. You will need [Docker]
 Make sure you have the latest docker image by running:
 
 ```bash
-docker pull elifesciences/sciencebeam
+docker pull elifesciences/sciencebeam-pipelines
 ```
 
 Note: add the `develop` tag to use the local image after building it (`docker-compose build`)
@@ -29,7 +29,7 @@ docker run --rm --add-host api.crossref.org:127.0.0.1 -p 8070:8070 lfoppiano/gro
 and:
 
 ```bash
-docker run --rm -i -t -p 8075:8075 --net=host elifesciences/sciencebeam \
+docker run --rm -i -t -p 8075:8075 --net=host elifesciences/sciencebeam-pipelines \
   ./server.sh --host=0.0.0.0 --port=8075 --grobid-url http://localhost:8070/api
 ```
 
@@ -44,7 +44,7 @@ docker run --rm -p 8071:8080 allenai-docker-public-docker.bintray.io/s2/sciencep
 and:
 
 ```bash
-docker run --rm -i -t -p 8075:8075 --net=host elifesciences/sciencebeam \
+docker run --rm -i -t -p 8075:8075 --net=host elifesciences/sciencebeam-pipelines \
   ./server.sh --host=0.0.0.0 --port=8075 --pipeline=scienceparse --science-parse-url \
   http://localhost:8071/v1
 ```
@@ -60,7 +60,7 @@ docker run --rm -p 8073:8081 allenai-docker-public-docker.bintray.io/s2/spv2:2.1
 and:
 
 ```bash
-docker run --rm -i -t -p 8075:8075 --net=host elifesciences/sciencebeam:develop \
+docker run --rm -i -t -p 8075:8075 --net=host elifesciences/sciencebeam-pipelines:develop \
   ./server.sh --host=0.0.0.0 --port=8075 --pipeline=scienceparse \
   --science-parse-url http://localhost:8073/v1/json/pdf --no-science-parse-xslt
 ```
@@ -76,7 +76,7 @@ docker run --rm -p 8072:8080 elifesciences/cermine:1.13
 and:
 
 ```bash
-docker run --rm -i -t -p 8075:8075 --net=host elifesciences/sciencebeam \
+docker run --rm -i -t -p 8075:8075 --net=host elifesciences/sciencebeam-pipelines \
   ./server.sh --host=0.0.0.0 --port=8075 --pipeline=cermine --cermine-url \
   http://localhost:8072/extract.do
 ```
@@ -92,7 +92,7 @@ docker run --rm -i -t -p 8074:8080 elifesciences/metypeset:latest
 and:
 
 ```bash
-docker run --rm -i -t -p 8075:8075 --net=host elifesciences/sciencebeam \
+docker run --rm -i -t -p 8075:8075 --net=host elifesciences/sciencebeam-pipelines \
   ./server.sh --host=0.0.0.0 --port=8075 --pipeline=metypeset --metypeset-url \
   http://localhost:8074/api/convert
 ```
@@ -108,7 +108,7 @@ docker run --rm -i -t -p 8076:8080 elifesciences/contentmine
 and:
 
 ```bash
-docker run --rm -i -t -p 8075:8075 --net=host elifesciences/sciencebeam \
+docker run --rm -i -t -p 8075:8075 --net=host elifesciences/sciencebeam-pipelines \
   ./server.sh --host=0.0.0.0 --port=8075 --pipeline=contentmine --contentmine-url \
   http://localhost:8076/api/convert
 ```

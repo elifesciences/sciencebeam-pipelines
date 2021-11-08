@@ -6,7 +6,7 @@ VENV = venv
 PIP = $(VENV)/bin/pip
 PYTHON = $(VENV)/bin/python
 
-RUN_DEV = $(DOCKER_COMPOSE) run --rm sciencebeam-dev
+RUN_DEV = $(DOCKER_COMPOSE) run --rm sciencebeam-pipelines-dev
 
 SCIENCEBEAM_PORT = 8075
 CONVERT_API_URL = http://localhost:$(SCIENCEBEAM_PORT)/api/convert
@@ -83,12 +83,12 @@ dev-start-doc-to-docx:
 
 
 build:
-	$(DOCKER_COMPOSE) build sciencebeam
+	$(DOCKER_COMPOSE) build sciencebeam-pipelines
 
 
 build-dev:
 	@if [ "$(NO_BUILD)" != "y" ]; then \
-		$(DOCKER_COMPOSE) build sciencebeam-base-dev sciencebeam-dev; \
+		$(DOCKER_COMPOSE) build sciencebeam-pipelines-base-dev sciencebeam-pipelines-dev; \
 	fi
 
 
@@ -105,16 +105,16 @@ shell-dev: build-dev
 
 
 build-and-start:
-	$(DOCKER_COMPOSE) up -d --build grobid sciencebeam
+	$(DOCKER_COMPOSE) up -d --build grobid sciencebeam-pipelines
 
 
 start:
-	$(DOCKER_COMPOSE) up -d grobid sciencebeam
+	$(DOCKER_COMPOSE) up -d grobid sciencebeam-pipelines
 
 
 start-doc-to-pdf:
-	$(DOCKER_COMPOSE) build sciencebeam
-	$(DOCKER_COMPOSE) run --rm --no-deps -p 8075:8075 sciencebeam \
+	$(DOCKER_COMPOSE) build sciencebeam-pipelines
+	$(DOCKER_COMPOSE) run --rm --no-deps -p 8075:8075 sciencebeam-pipelines \
 		python -m sciencebeam.server --host=0.0.0.0 --port=8075 --pipeline=doc_to_pdf $(ARGS)
 
 
@@ -125,12 +125,12 @@ convert-example-document:
 			> /dev/null
 
 
-wait-for-sciencebeam:
+wait-for-sciencebeam-pipelines:
 	$(DOCKER_COMPOSE) run --rm wait-for-it \
-		"sciencebeam:$(SCIENCEBEAM_PORT)" \
+		"sciencebeam-pipelines:$(SCIENCEBEAM_PORT)" \
 		--timeout=10 \
 		--strict \
-		-- echo "ScienceBeam is up"
+		-- echo "ScienceBeam Pipelines is up"
 
 
 wait-for-grobid:
@@ -143,7 +143,7 @@ wait-for-grobid:
 
 end-to-end-test:
 	$(MAKE) start
-	$(MAKE) wait-for-sciencebeam wait-for-grobid
+	$(MAKE) wait-for-sciencebeam-pipelines wait-for-grobid
 	$(MAKE) convert-example-document
 	$(MAKE) stop
 

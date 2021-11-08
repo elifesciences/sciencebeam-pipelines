@@ -1,14 +1,14 @@
 version: '3'
 
 services:
-    sciencebeam:
+    sciencebeam-pipelines:
         build:
             context: .
             dockerfile: Dockerfile
             args: 
                 commit: ${IMAGE_TAG}
                 version: ${VERSION}
-        image: elifesciences/sciencebeam:${IMAGE_TAG}
+        image: elifesciences/sciencebeam-pipelines:${IMAGE_TAG}
         command: ./server.sh \
             --host=0.0.0.0 --port=8075 \
             --grobid-url http://grobid:8070/api
@@ -21,7 +21,7 @@ services:
         ports:
             - "8075:8075"
 
-    sciencebeam-base-dev:
+    sciencebeam-pipelines-base-dev:
         build:
             context: .
             dockerfile: Dockerfile
@@ -29,17 +29,17 @@ services:
                 commit: ${IMAGE_TAG}
                 version: ${VERSION}
                 install_dev: "y"
-        image: elifesciences/sciencebeam-base-dev:${IMAGE_TAG}
+        image: elifesciences/sciencebeam-pipelines-base-dev:${IMAGE_TAG}
 
-    sciencebeam-dev:
+    sciencebeam-pipelines-dev:
         build:
             context: .
             dockerfile: Dockerfile.dev
             args: 
-                base_image: elifesciences/sciencebeam-base-dev:${IMAGE_TAG}
-        image: elifesciences/sciencebeam-dev:${IMAGE_TAG}
+                base_image: elifesciences/sciencebeam-pipelines-base-dev:${IMAGE_TAG}
+        image: elifesciences/sciencebeam-pipelines-dev:${IMAGE_TAG}
         depends_on:
-            - sciencebeam-base-dev
+            - sciencebeam-pipelines-base-dev
 
     grobid:
         image: lfoppiano/grobid:${GROBID_TAG}
