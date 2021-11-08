@@ -8,7 +8,7 @@ services:
 
     sciencebeam-pipelines-dev:
         volumes:
-        - ./sciencebeam:/srv/sciencebeam-pipelines/sciencebeam
+        - ./sciencebeam_pipelines:/srv/sciencebeam-pipelines/sciencebeam_pipelines
         - ./tests:/srv/sciencebeam-pipelines/tests
         - ./xslt:/srv/sciencebeam-pipelines/xslt
         environment:
