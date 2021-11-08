@@ -40,7 +40,7 @@ To run the pipeline using Apache Beam:
 
 ```bash
 python -m sciencebeam_pipelines.pipeline_runners.beam_pipeline_runner \
-  --data-path=/home/deuser/_git_/elife/pdf-xml/data/other/00666 --source-path=*.pdf \
+  --data-path=/path/to/pdf-base-path --source-path=*.pdf \
   --grobid-url=http://localhost:8070/api
 ```
 
