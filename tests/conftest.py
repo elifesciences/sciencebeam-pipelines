@@ -14,7 +14,7 @@ from .compat_patch_mock import patch_magicmock_fixture  # noqa pylint: disable=u
 def setup_logging():
     logging.root.handlers = []
     logging.basicConfig(level='WARNING')
-    logging.getLogger('sciencebeam').setLevel('DEBUG')
+    logging.getLogger('sciencebeam_pipelines').setLevel('DEBUG')
     logging.getLogger('tests').setLevel('DEBUG')
 
 

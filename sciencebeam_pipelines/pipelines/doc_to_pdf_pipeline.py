@@ -1,6 +1,6 @@
 import logging
 
-from sciencebeam.utils.mime_type_constants import MimeTypes
+from sciencebeam_pipelines.utils.mime_type_constants import MimeTypes
 
 from . import Pipeline
 

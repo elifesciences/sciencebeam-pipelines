@@ -3,8 +3,8 @@ from unittest.mock import patch
 
 import pytest
 
-from sciencebeam.pipelines import doc_to_type_pipeline as doc_to_type_pipeline_module
-from sciencebeam.pipelines.doc_to_type_pipeline import (
+from sciencebeam_pipelines.pipelines import doc_to_type_pipeline as doc_to_type_pipeline_module
+from sciencebeam_pipelines.pipelines.doc_to_type_pipeline import (
     DocToTypeStep
 )
 

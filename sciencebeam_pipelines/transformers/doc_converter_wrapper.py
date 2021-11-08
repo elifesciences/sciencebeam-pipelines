@@ -9,7 +9,7 @@ from sciencebeam_utils.utils.file_path import (
     change_ext
 )
 
-from sciencebeam.utils.background_process import (
+from sciencebeam_pipelines.utils.background_process import (
     ChildProcessReturnCodeError,
     CommandRestartableBackgroundProcess,
     exec_with_logging

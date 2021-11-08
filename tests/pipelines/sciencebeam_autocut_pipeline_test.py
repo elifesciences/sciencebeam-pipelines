@@ -10,11 +10,11 @@ from lxml.builder import E
 
 from sciencebeam_utils.utils.collection import extend_dict
 
-from sciencebeam.utils.mime_type_constants import MimeTypes
+from sciencebeam_pipelines.utils.mime_type_constants import MimeTypes
 
-from sciencebeam.pipelines import sciencebeam_autocut_pipeline as \
+from sciencebeam_pipelines.pipelines import sciencebeam_autocut_pipeline as \
     sciencebeam_autocut_pipeline_module
-from sciencebeam.pipelines.sciencebeam_autocut_pipeline import PIPELINE
+from sciencebeam_pipelines.pipelines.sciencebeam_autocut_pipeline import PIPELINE
 
 
 # Note: disable "not-callable" to avoid "E is not callable (not-callable)"

@@ -9,10 +9,10 @@ import flask
 
 from sciencebeam_utils.utils.file_list import save_file_list
 
-from sciencebeam.utils.mime_type_constants import MimeTypes
-from sciencebeam.utils.misc import dict_to_args
+from sciencebeam_pipelines.utils.mime_type_constants import MimeTypes
+from sciencebeam_pipelines.utils.misc import dict_to_args
 
-from sciencebeam.pipeline_runners.local_pipeline_runner import (
+from sciencebeam_pipelines.pipeline_runners.local_pipeline_runner import (
     parse_args,
     main
 )

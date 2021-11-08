@@ -10,13 +10,13 @@ import logging
 import apache_beam as beam
 from apache_beam.options.pipeline_options import PipelineOptions, SetupOptions
 
-from sciencebeam.beam_utils.fileio import ReadFileNamesAndContent, WriteToFile
-from sciencebeam.beam_utils.core import MapKeys, MapValues
-from sciencebeam.transformers.grobid_service import (
+from sciencebeam_pipelines.beam_utils.fileio import ReadFileNamesAndContent, WriteToFile
+from sciencebeam_pipelines.beam_utils.core import MapKeys, MapValues
+from sciencebeam_pipelines.transformers.grobid_service import (
     grobid_service,
     GrobidApiPaths
 )
-from sciencebeam.transformers.xslt import xslt_transformer_from_file
+from sciencebeam_pipelines.transformers.xslt import xslt_transformer_from_file
 
 
 def get_logger():

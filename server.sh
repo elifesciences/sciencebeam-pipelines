@@ -2,4 +2,4 @@
 
 set -e
 
-python -m sciencebeam.server $@
+python -m sciencebeam_pipelines.server $@

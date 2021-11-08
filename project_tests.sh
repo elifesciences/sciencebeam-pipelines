@@ -2,10 +2,10 @@
 set -e
 
 echo "running flake8"
-flake8 sciencebeam tests setup.py
+flake8 sciencebeam_pipelines tests setup.py
 
 echo "running pylint"
-pylint sciencebeam tests setup.py
+pylint sciencebeam_pipelines tests setup.py
 
 echo "running pytest"
 pytest -p no:cacheprovider

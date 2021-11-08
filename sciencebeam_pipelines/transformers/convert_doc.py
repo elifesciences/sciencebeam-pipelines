@@ -3,8 +3,8 @@ import os
 from distutils.util import strtobool
 from backports.tempfile import TemporaryDirectory
 
-from sciencebeam.config.app_config import get_app_config
-from sciencebeam.utils.mime_type_constants import MimeTypes, guess_extension
+from sciencebeam_pipelines.config.app_config import get_app_config
+from sciencebeam_pipelines.utils.mime_type_constants import MimeTypes, guess_extension
 
 from .doc_converter_wrapper import DocConverterWrapper
 

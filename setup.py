@@ -12,7 +12,7 @@ from setuptools import (
     Command
 )
 
-import sciencebeam
+import sciencebeam_pipelines
 
 
 CUSTOM_COMMANDS = [
@@ -75,8 +75,8 @@ class CustomCommands(Command):
 
 
 setup(
-    name='sciencebeam',
-    version=sciencebeam.__version__,
+    name='sciencebeam_pipelines',
+    version=sciencebeam_pipelines.__version__,
     install_requires=REQUIRED_PACKAGES,
     packages=packages,
     include_package_data=True,

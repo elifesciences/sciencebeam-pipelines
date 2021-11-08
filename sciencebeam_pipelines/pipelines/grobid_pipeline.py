@@ -3,14 +3,14 @@ import logging
 from configparser import ConfigParser
 from typing import Dict, List, Optional
 
-from sciencebeam.transformers.grobid_service import (
+from sciencebeam_pipelines.transformers.grobid_service import (
     grobid_service,
     GrobidApiPaths
 )
 
-from sciencebeam.transformers.xslt import xslt_transformer_from_file
+from sciencebeam_pipelines.transformers.xslt import xslt_transformer_from_file
 
-from sciencebeam.utils.mime_type_constants import MimeTypes
+from sciencebeam_pipelines.utils.mime_type_constants import MimeTypes
 
 from . import Pipeline, FunctionPipelineStep, FieldNames, StepDataProps
 

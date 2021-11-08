@@ -4,7 +4,7 @@ import logging
 from flask import Flask
 from flask_cors import CORS
 
-from sciencebeam.config.app_config import get_app_config
+from sciencebeam_pipelines.config.app_config import get_app_config
 
 from .blueprints.api import (
     create_api_blueprint,

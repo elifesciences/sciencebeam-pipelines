@@ -2,7 +2,7 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from sciencebeam.transformers.doc_converter_wrapper import ListenerProcess
+from sciencebeam_pipelines.transformers.doc_converter_wrapper import ListenerProcess
 
 
 @pytest.fixture(name='process_mock')

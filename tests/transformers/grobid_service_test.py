@@ -2,7 +2,7 @@ from unittest.mock import patch, ANY
 
 import pytest
 
-from sciencebeam.transformers.grobid_service import (
+from sciencebeam_pipelines.transformers.grobid_service import (
     GrobidServiceConfigEnvVariables,
     GrobidServiceConfig,
     get_grobid_service_config,

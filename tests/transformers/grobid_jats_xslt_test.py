@@ -15,7 +15,7 @@ from lxml.builder import ElementMaker
 from sciencebeam_utils.utils.collection import extend_dict
 from sciencebeam_utils.utils.xml import get_text_content
 
-from sciencebeam.transformers.xslt import xslt_transformer_from_file
+from sciencebeam_pipelines.transformers.xslt import xslt_transformer_from_file
 
 LOGGER = logging.getLogger(__name__)
 

@@ -40,11 +40,11 @@ dev-venv: venv-create dev-install
 
 
 dev-flake8:
-	$(PYTHON) -m flake8 sciencebeam tests setup.py
+	$(PYTHON) -m flake8 sciencebeam_pipelines tests setup.py
 
 
 dev-pylint:
-	$(PYTHON) -m pylint sciencebeam tests setup.py
+	$(PYTHON) -m pylint sciencebeam_pipelines tests setup.py
 
 
 dev-lint: dev-flake8 dev-pylint
@@ -66,20 +66,20 @@ dev-test: dev-lint dev-pytest
 
 
 dev-start:
-	$(PYTHON) -m sciencebeam.server $(ARGS)
+	$(PYTHON) -m sciencebeam_pipelines.server $(ARGS)
 
 
 dev-start-debug:
 	FLASK_ENV=development \
-		$(PYTHON) -m sciencebeam.server $(ARGS)
+		$(PYTHON) -m sciencebeam_pipelines.server $(ARGS)
 
 
 dev-start-doc-to-pdf:
-	$(PYTHON) -m sciencebeam.server --port=8075 --pipeline=doc_to_pdf $(ARGS)
+	$(PYTHON) -m sciencebeam_pipelines.server --port=8075 --pipeline=doc_to_pdf $(ARGS)
 
 
 dev-start-doc-to-docx:
-	$(PYTHON) -m sciencebeam.server --port=8075 --pipeline=doc_to_docx $(ARGS)
+	$(PYTHON) -m sciencebeam_pipelines.server --port=8075 --pipeline=doc_to_docx $(ARGS)
 
 
 build:
@@ -115,7 +115,7 @@ start:
 start-doc-to-pdf:
 	$(DOCKER_COMPOSE) build sciencebeam-pipelines
 	$(DOCKER_COMPOSE) run --rm --no-deps -p 8075:8075 sciencebeam-pipelines \
-		python -m sciencebeam.server --host=0.0.0.0 --port=8075 --pipeline=doc_to_pdf $(ARGS)
+		python -m sciencebeam_pipelines.server --host=0.0.0.0 --port=8075 --pipeline=doc_to_pdf $(ARGS)
 
 
 convert-example-document:

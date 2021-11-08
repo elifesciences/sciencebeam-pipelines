@@ -7,12 +7,12 @@ import pytest
 
 from werkzeug.datastructures import MultiDict
 
-from sciencebeam.utils.mime_type_constants import MimeTypes
+from sciencebeam_pipelines.utils.mime_type_constants import MimeTypes
 
-from sciencebeam.pipelines import DEFAULT_REQUEST_TIMEOUT
+from sciencebeam_pipelines.pipelines import DEFAULT_REQUEST_TIMEOUT
 
-from sciencebeam.pipelines import api_pipeline as api_pipeline_module
-from sciencebeam.pipelines.api_pipeline import PIPELINE
+from sciencebeam_pipelines.pipelines import api_pipeline as api_pipeline_module
+from sciencebeam_pipelines.pipelines.api_pipeline import PIPELINE
 
 PDF_INPUT = {
     'filename': 'test.pdf',
@@ -65,7 +65,7 @@ class TestScienceParsePipeline:
     def test_should_pass_api_url_and_pdf_content_to_requests_post_call(
             self, config, args, requests_post):
 
-        args.api_url = 'http://sciencebeam/api'
+        args.api_url = 'http://sciencebeam_pipelines/api'
         _run_pipeline(config, args, PDF_INPUT)
         requests_post.assert_called_with(
             args.api_url,
@@ -91,7 +91,7 @@ class TestScienceParsePipeline:
     def test_should_pass_passed_in_url_parameters_to_requests_post_call(
             self, config, args, requests_post):
 
-        args.api_url = 'http://sciencebeam/api'
+        args.api_url = 'http://sciencebeam_pipelines/api'
         request_args = MultiDict([('remove_line_no', 'n')])
         _run_pipeline(config, args, PDF_INPUT, context={'request_args': request_args})
         requests_post.assert_called()

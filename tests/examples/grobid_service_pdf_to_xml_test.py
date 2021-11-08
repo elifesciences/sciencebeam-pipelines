@@ -10,8 +10,8 @@ from sciencebeam_utils.beam_utils.testing import (
     TestPipeline
 )
 
-import sciencebeam.examples.grobid_service_pdf_to_xml as pipeline_module
-from sciencebeam.examples.grobid_service_pdf_to_xml import (
+import sciencebeam_pipelines.examples.grobid_service_pdf_to_xml as pipeline_module
+from sciencebeam_pipelines.examples.grobid_service_pdf_to_xml import (
     configure_pipeline,
     parse_args
 )

@@ -5,12 +5,12 @@ from unittest.mock import patch, MagicMock
 
 import pytest
 
-from sciencebeam.utils.mime_type_constants import MimeTypes
+from sciencebeam_pipelines.utils.mime_type_constants import MimeTypes
 
-from sciencebeam.pipelines import DEFAULT_REQUEST_TIMEOUT
+from sciencebeam_pipelines.pipelines import DEFAULT_REQUEST_TIMEOUT
 
-from sciencebeam.pipelines import cermine_pipeline as cermine_pipeline_module
-from sciencebeam.pipelines.cermine_pipeline import PIPELINE
+from sciencebeam_pipelines.pipelines import cermine_pipeline as cermine_pipeline_module
+from sciencebeam_pipelines.pipelines.cermine_pipeline import PIPELINE
 
 PDF_INPUT = {
     'filename': 'test.pdf',

@@ -18,25 +18,25 @@ from sciencebeam_utils.beam_utils.io import (
 
 from sciencebeam_utils.utils.tqdm import tqdm_with_logging_redirect
 
-from sciencebeam.utils.formatting import format_size
-from sciencebeam.utils.logging import configure_logging
-from sciencebeam.utils.requests import RetrySession, METHOD_WHITELIST_WITH_POST
+from sciencebeam_pipelines.utils.formatting import format_size
+from sciencebeam_pipelines.utils.logging import configure_logging
+from sciencebeam_pipelines.utils.requests import RetrySession, METHOD_WHITELIST_WITH_POST
 
-from sciencebeam.config.app_config import get_app_config
+from sciencebeam_pipelines.config.app_config import get_app_config
 
 
-from sciencebeam.pipelines import Pipeline, RequestsPipelineStep
+from sciencebeam_pipelines.pipelines import Pipeline, RequestsPipelineStep
 
-from sciencebeam.pipelines import (
+from sciencebeam_pipelines.pipelines import (
     get_pipeline_for_configuration_and_args,
     add_pipeline_args
 )
 
-from sciencebeam.pipeline_runners.simple_pipeline_runner import (
+from sciencebeam_pipelines.pipeline_runners.simple_pipeline_runner import (
     SimplePipelineRunner
 )
 
-from sciencebeam.pipeline_runners.pipeline_runner_utils import (
+from sciencebeam_pipelines.pipeline_runners.pipeline_runner_utils import (
     add_batch_args,
     process_batch_args,
     encode_if_text_type,

@@ -7,11 +7,11 @@ import pytest
 
 from sciencebeam_utils.utils.collection import extend_dict
 
-from sciencebeam.utils.mime_type_constants import MimeTypes
+from sciencebeam_pipelines.utils.mime_type_constants import MimeTypes
 
-from sciencebeam.pipelines import FieldNames, StepDataProps
-from sciencebeam.pipelines import grobid_pipeline as grobid_pipeline_module
-from sciencebeam.pipelines.grobid_pipeline import (
+from sciencebeam_pipelines.pipelines import FieldNames, StepDataProps
+from sciencebeam_pipelines.pipelines import grobid_pipeline as grobid_pipeline_module
+from sciencebeam_pipelines.pipelines.grobid_pipeline import (
     PIPELINE,
     LOCAL_GROBID_API_URL,
     GrobidApiPaths

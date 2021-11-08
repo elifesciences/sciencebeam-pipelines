@@ -10,7 +10,7 @@ RUN apt-get update \
     fontconfig \
   && rm -rf /var/lib/apt/lists/*
 
-ENV PROJECT_HOME=/srv/sciencebeam
+ENV PROJECT_HOME=/srv/sciencebeam-pipelines
 
 ENV VENV=${PROJECT_HOME}/venv
 RUN python3 -m venv ${VENV}
@@ -34,7 +34,7 @@ ARG install_dev
 COPY requirements.dev.txt ./
 RUN if [ "${install_dev}" = "y" ]; then pip install -r requirements.dev.txt; fi
 
-COPY sciencebeam ${PROJECT_HOME}/sciencebeam
+COPY sciencebeam_pipelines ${PROJECT_HOME}/sciencebeam_pipelines
 COPY xslt ${PROJECT_HOME}/xslt
 COPY *.cfg *.conf *.sh *.in *.txt *.py ${PROJECT_HOME}/
 
@@ -62,6 +62,6 @@ RUN \
   && ls -l ${UNO_OFFICE_BINARY_PATH}
 
 # labels
-LABEL org.opencontainers.image.source="https://github.com/elifesciences/sciencebeam"
+LABEL org.opencontainers.image.source="https://github.com/elifesciences/sciencebeam-pipelines"
 LABEL org.opencontainers.image.revision="${commit}"
 LABEL org.opencontainers.image.version="${version}"

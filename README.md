@@ -39,23 +39,23 @@ The pipeline can be executed directly (e.g. as part of the API, see below) or tr
 To run the pipeline using Apache Beam:
 
 ```bash
-python -m sciencebeam.pipeline_runners.beam_pipeline_runner \
-  --data-path=/home/deuser/_git_/elife/pdf-xml/data/other/00666 --source-path=*.pdf \
+python -m sciencebeam_pipelines.pipeline_runners.beam_pipeline_runner \
+  --data-path=/path/to/pdf-base-path --source-path=*.pdf \
   --grobid-url=http://localhost:8070/api
 ```
 
 To get a list of all of the available parameters:
 
 ```bash
-python -m sciencebeam.pipeline_runners.beam_pipeline_runner --help
+python -m sciencebeam_pipelines.pipeline_runners.beam_pipeline_runner --help
 ```
 
 Note: the list of parameters may change depending on the configured pipeline.
 
 Current pipelines:
 
-- [GROBID /w XSLT pipeline](sciencebeam/pipelines/grobid_pipeline.py)
-- [Doc to PDF pipeline](sciencebeam/pipelines/doc_to_pdf_pipeline.py)
+- [GROBID /w XSLT pipeline](sciencebeam_pipelines/pipelines/grobid_pipeline.py)
+- [Doc to PDF pipeline](sciencebeam_pipelines/pipelines/doc_to_pdf_pipeline.py)
 
 ## API Server
 
@@ -102,9 +102,9 @@ This can be switched off by either:
 
 ## Extending the Pipeline
 
-You can use the [grobid_pipeline.py](sciencebeam/pipelines/grobid_pipeline.py) as a template and add your own pipelines with other step. Please see [Simple Pipeline](#simple-pipeline) for configuration details.
+You can use the [grobid_pipeline.py](sciencebeam_pipelines/pipelines/grobid_pipeline.py) as a template and add your own pipelines with other step. Please see [Simple Pipeline](#simple-pipeline) for configuration details.
 
-The recommended way of extending the pipeline is to use a separate API server exposed via another docker container (as is the case for all of the currently integrated tools). If that is impractical for your use case you could also run locally installed programs (similar to the [grobid_pipeline.py](sciencebeam/pipelines/doc_to_pdf_pipeline.py)).
+The recommended way of extending the pipeline is to use a separate API server exposed via another docker container (as is the case for all of the currently integrated tools). If that is impractical for your use case you could also run locally installed programs (similar to the [grobid_pipeline.py](sciencebeam_pipelines/pipelines/doc_to_pdf_pipeline.py)).
 
 If the simple pipeline is too restrictive, you could consider the [deprecated pipeline examples](doc/deprecated-pipeline-examples.md).
 

@@ -11,11 +11,13 @@ from sciencebeam_utils.beam_utils.testing import (
     get_counter_value
 )
 
-from sciencebeam.utils.config import dict_to_config
-from sciencebeam.utils.mime_type_constants import MimeTypes
+from sciencebeam_pipelines.utils.config import dict_to_config
+from sciencebeam_pipelines.utils.mime_type_constants import MimeTypes
 
-from sciencebeam.pipeline_runners import beam_pipeline_runner as beam_pipeline_runner_module
-from sciencebeam.pipeline_runners.beam_pipeline_runner import (
+from sciencebeam_pipelines.pipeline_runners import (
+    beam_pipeline_runner as beam_pipeline_runner_module
+)
+from sciencebeam_pipelines.pipeline_runners.beam_pipeline_runner import (
     configure_pipeline,
     parse_args,
     get_step_error_counter,

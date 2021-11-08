@@ -1,6 +1,6 @@
 from lxml import etree
 
-from sciencebeam.transformers.xslt import _to_xslt_input
+from sciencebeam_pipelines.transformers.xslt import _to_xslt_input
 
 
 class TestToXsltInput:
