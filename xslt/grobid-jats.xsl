@@ -9,12 +9,13 @@
   xmlns:mml="http://www.w3.org/1998/Math/MathML" 
   xmlns:xlink="http://www.w3.org/1999/xlink" 
   xmlns:tei="http://www.tei-c.org/ns/1.0"
-  exclude-result-prefixes="xlink xs mml tei"
+  exclude-result-prefixes="xs mml tei"
   version="1.0"
 >
   <xsl:param name="output_parameters" select="'false'"/>
   <xsl:param name="output_bold" select="'false'"/>
   <xsl:param name="output_italic" select="'false'"/>
+  <xsl:param name="output_empty_figure_graphic" select="'true'"/>
   <xsl:param name="acknowledgement_target" select="'ack'"/>
   <xsl:param name="annex_target" select="'back'"/>
 
@@ -150,6 +151,16 @@
     </xsl:if>
   </xsl:template>
 
+  <xsl:template match="tei:graphic">
+    <graphic>
+      <xsl:if test="@url">
+        <xsl:attribute name='xlink:href'>
+          <xsl:value-of select="@url"/>
+        </xsl:attribute>
+      </xsl:if>
+    </graphic>
+  </xsl:template>
+
   <xsl:template match="tei:figure[not(@type='table')]">
     <fig>
       <xsl:attribute name='id'>
@@ -158,10 +169,15 @@
       <object-id><xsl:value-of select="@xml:id"/></object-id>
       <label><xsl:value-of select="tei:head"/></label>
       <caption>
-        <title><xsl:apply-templates select="tei:head"/></title>
+        <xsl:apply-templates select="tei:head"/>
         <p><xsl:apply-templates select="tei:figDesc"/></p>
       </caption>
-      <graphic />
+      <xsl:apply-templates select="tei:graphic"/>
+      <xsl:if test="$output_empty_figure_graphic = 'true'">
+        <xsl:if test="not(tei:graphic)">
+          <graphic/>
+        </xsl:if>
+      </xsl:if>
     </fig>
   </xsl:template>
 
@@ -172,7 +188,7 @@
       </xsl:attribute>
       <label><xsl:value-of select="tei:head"/></label>
       <caption>
-        <title><xsl:apply-templates select="tei:head"/></title>
+        <xsl:apply-templates select="tei:head"/>
         <p><xsl:apply-templates select="tei:figDesc"/></p>
       </caption>
       <table>
