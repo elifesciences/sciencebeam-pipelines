@@ -1,8 +1,8 @@
 version: '3'
 
 services:
-    sciencebeam:
-        image: elifesciences/sciencebeam:latest
+    sciencebeam-pipelines:
+        image: elifesciences/sciencebeam-pipelines:latest
         command: ./server.sh \
             --host=0.0.0.0 --port=8075 \
             --grobid-url http://grobid:8070/api

@@ -42,7 +42,7 @@ elifePipeline {
             }
 
             stage 'Push unstable image', {
-                def image = DockerImage.elifesciences(this, 'sciencebeam', commit)
+                def image = DockerImage.elifesciences(this, 'sciencebeam-pipelines', commit)
                 def unstable_image = image.addSuffixAndTag('_unstable', commit)
                 unstable_image.tag('latest').push()
                 unstable_image.push()
@@ -54,7 +54,7 @@ elifePipeline {
             def candidateVersion = tagName - "v"
 
             stage 'Push release image', {
-                def image = DockerImage.elifesciences(this, 'sciencebeam', commit)
+                def image = DockerImage.elifesciences(this, 'sciencebeam-pipelines', commit)
                 image.tag('latest').push()
                 image.tag(candidateVersion).push()
             }

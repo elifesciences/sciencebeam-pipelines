@@ -2,11 +2,11 @@ version: '3'
 
 # used by default but not in ci
 services:
-    sciencebeam:
+    sciencebeam-pipelines:
         depends_on:
             - grobid
 
-    sciencebeam-dev:
+    sciencebeam-pipelines-dev:
         volumes:
         - ./sciencebeam:/srv/sciencebeam/sciencebeam
         - ./tests:/srv/sciencebeam/tests
