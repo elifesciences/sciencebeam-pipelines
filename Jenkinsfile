@@ -60,7 +60,7 @@ elifePipeline {
             }
 
             stage 'Downstream', {
-                build job: '/dependencies/dependencies-sciencebeam-texture-update-sciencebeam', wait: false, parameters: [string(name: 'tag', value: candidateVersion)]
+                build job: '/dependencies/dependencies-sciencebeam-texture-update-sciencebeam-pipelines', wait: false, parameters: [string(name: 'tag', value: candidateVersion)]
             }
         }
     }
