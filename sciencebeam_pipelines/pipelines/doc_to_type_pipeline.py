@@ -3,9 +3,9 @@ import os
 
 from sciencebeam_utils.utils.file_path import change_ext
 
-from sciencebeam.utils.mime_type_constants import MimeTypes
+from sciencebeam_pipelines.utils.mime_type_constants import MimeTypes
 
-from sciencebeam.transformers.convert_doc import doc_to_type
+from sciencebeam_pipelines.transformers.convert_doc import doc_to_type
 
 from . import PipelineStep
 

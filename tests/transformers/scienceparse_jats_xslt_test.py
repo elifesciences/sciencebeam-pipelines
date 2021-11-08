@@ -7,9 +7,9 @@ from lxml import etree
 
 from sciencebeam_utils.utils.collection import extend_dict
 
-from sciencebeam.transformers.xslt import xslt_transformer_from_file
+from sciencebeam_pipelines.transformers.xslt import xslt_transformer_from_file
 
-from sciencebeam.transformers.json_to_xml import json_to_xml
+from sciencebeam_pipelines.transformers.json_to_xml import json_to_xml
 
 
 LOGGER = logging.getLogger(__name__)

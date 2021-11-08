@@ -6,7 +6,7 @@ from typing import Dict, NamedTuple, Sequence, Union
 
 import requests
 
-from sciencebeam.transformers.grobid_service_wrapper import (
+from sciencebeam_pipelines.transformers.grobid_service_wrapper import (
     GrobidServiceWrapper
 )
 

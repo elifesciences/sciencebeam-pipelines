@@ -2,7 +2,7 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from sciencebeam.utils.background_process import BackgroundProcess
+from sciencebeam_pipelines.utils.background_process import BackgroundProcess
 
 
 @pytest.fixture(name='process_mock')

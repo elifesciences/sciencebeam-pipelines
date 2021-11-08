@@ -2,8 +2,8 @@ from unittest.mock import patch, MagicMock
 
 import pytest
 
-import sciencebeam.pipeline_runners.pipeline_runner_utils as pipeline_runner_utils_module
-from sciencebeam.pipeline_runners.pipeline_runner_utils import (
+import sciencebeam_pipelines.pipeline_runners.pipeline_runner_utils as pipeline_runner_utils_module
+from sciencebeam_pipelines.pipeline_runners.pipeline_runner_utils import (
     get_remaining_file_list_for_args
 )
 

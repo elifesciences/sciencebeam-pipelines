@@ -11,13 +11,13 @@ from werkzeug.exceptions import BadRequest
 
 import pytest
 
-from sciencebeam.utils.mime_type_constants import MimeTypes
-from sciencebeam.utils.config import dict_to_config
+from sciencebeam_pipelines.utils.mime_type_constants import MimeTypes
+from sciencebeam_pipelines.utils.config import dict_to_config
 
-from sciencebeam.pipelines import FieldNames
+from sciencebeam_pipelines.pipelines import FieldNames
 
-from sciencebeam.server.blueprints import api as api_module
-from sciencebeam.server.blueprints.api import (
+from sciencebeam_pipelines.server.blueprints import api as api_module
+from sciencebeam_pipelines.server.blueprints.api import (
     create_api_blueprint,
     DEFAULT_FILENAME
 )

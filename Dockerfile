@@ -34,7 +34,7 @@ ARG install_dev
 COPY requirements.dev.txt ./
 RUN if [ "${install_dev}" = "y" ]; then pip install -r requirements.dev.txt; fi
 
-COPY sciencebeam ${PROJECT_HOME}/sciencebeam
+COPY sciencebeam_pipelines ${PROJECT_HOME}/sciencebeam_pipelines
 COPY xslt ${PROJECT_HOME}/xslt
 COPY *.cfg *.conf *.sh *.in *.txt *.py ${PROJECT_HOME}/
 

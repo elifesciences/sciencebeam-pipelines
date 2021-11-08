@@ -4,10 +4,10 @@ import requests
 
 from sciencebeam_utils.utils.file_path import change_ext
 
-from sciencebeam.transformers.xslt import xslt_transformer_from_file
-from sciencebeam.transformers.json_to_xml import json_to_xml
+from sciencebeam_pipelines.transformers.xslt import xslt_transformer_from_file
+from sciencebeam_pipelines.transformers.json_to_xml import json_to_xml
 
-from sciencebeam.utils.mime_type_constants import MimeTypes
+from sciencebeam_pipelines.utils.mime_type_constants import MimeTypes
 
 from . import Pipeline, RequestsPipelineStep, FunctionPipelineStep
 

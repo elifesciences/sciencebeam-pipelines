@@ -11,7 +11,7 @@ This pipeline will run [Grobid](http://grobid.readthedocs.io/en/latest/) is used
 To run the example conversion with the defaults:
 
 ```bash
-python -m sciencebeam.examples.grobid_service_pdf_to_xml --input "/path/to/pdfs/*/*.pdf"
+python -m sciencebeam_pipelines.examples.grobid_service_pdf_to_xml --input "/path/to/pdfs/*/*.pdf"
 ```
 
 That will automatically download and run a [Grobid Service](https://grobid.readthedocs.io/en/latest/Grobid-service/) instance.
@@ -19,23 +19,23 @@ That will automatically download and run a [Grobid Service](https://grobid.readt
 Or specify the Grobid URL and file suffix (in that case the Grobid Service is assumed to be running):
 
 ```bash
-python -m sciencebeam.examples.grobid_service_pdf_to_xml --input "/path/to/pdfs/*/*.pdf" \
+python -m sciencebeam_pipelines.examples.grobid_service_pdf_to_xml --input "/path/to/pdfs/*/*.pdf" \
  --grobid-url http://localhost:8080 --output-suffix .tei-header.xml
 ```
 
 Or specify an XSLT transformation, e.g. using [grobid-jats.xsl](https://github.com/kermitt2/grobid/blob/master/grobid-core/src/main/resources/xslt/grobid-jats.xsl):
 
 ```bash
-python -m sciencebeam.examples.grobid_service_pdf_to_xml --input "/path/to/pdfs/*/*.pdf" \
+python -m sciencebeam_pipelines.examples.grobid_service_pdf_to_xml --input "/path/to/pdfs/*/*.pdf" \
  --xslt-path grobid-jats.xsl
 ```
 
 Assuming you have already authenticated with [Google's Cloud SDK](https://cloud.google.com/sdk/) you can also work with buckets by specifying the URL:
 
 ```bash
-python -m sciencebeam.examples.grobid_service_pdf_to_xml --input "gs://example_bucket/path/to/pdfs/*.pdf"
+python -m sciencebeam_pipelines.examples.grobid_service_pdf_to_xml --input "gs://example_bucket/path/to/pdfs/*.pdf"
 ```
 
 ## Extending the Pipeline (deprecated)
 
-You can use the [grobid_service_pdf_to_xml.py](../sciencebeam/examples/grobid_service_pdf_to_xml.py) example as a template and add your own steps.
+You can use the [grobid_service_pdf_to_xml.py](../sciencebeam_pipelines/examples/grobid_service_pdf_to_xml.py) example as a template and add your own steps.

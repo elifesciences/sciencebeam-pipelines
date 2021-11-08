@@ -7,9 +7,9 @@ from werkzeug.exceptions import BadRequest, ServiceUnavailable
 
 from sciencebeam_utils.utils.collection import strip_all
 
-from sciencebeam.utils.mime_type_constants import MimeTypes
+from sciencebeam_pipelines.utils.mime_type_constants import MimeTypes
 
-from sciencebeam.pipeline_runners.simple_pipeline_runner import (
+from sciencebeam_pipelines.pipeline_runners.simple_pipeline_runner import (
     create_simple_pipeline_runner_from_config,
     add_arguments as _add_arguments
 )

@@ -5,10 +5,10 @@ from unittest.mock import patch, MagicMock
 
 import pytest
 
-from sciencebeam.utils.mime_type_constants import MimeTypes
+from sciencebeam_pipelines.utils.mime_type_constants import MimeTypes
 
-from sciencebeam.transformers import convert_doc as convert_doc_module
-from sciencebeam.transformers.convert_doc import (
+from sciencebeam_pipelines.transformers import convert_doc as convert_doc_module
+from sciencebeam_pipelines.transformers.convert_doc import (
     DEFAULT_DOC_CONVERT_PROCESS_TIMEOUT,
     DEFAULT_DOC_CONVERT_MAX_UPTIME,
     DOC_CONVERT_SECTION_NAME,

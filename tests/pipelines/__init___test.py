@@ -2,18 +2,18 @@ from unittest.mock import patch, MagicMock
 
 import pytest
 
-from sciencebeam.utils.config import dict_to_config
-from sciencebeam.utils.mime_type_constants import MimeTypes
+from sciencebeam_pipelines.utils.config import dict_to_config
+from sciencebeam_pipelines.utils.mime_type_constants import MimeTypes
 
-from sciencebeam import pipelines as pipelines_module
-from sciencebeam.pipelines import (
+from sciencebeam_pipelines import pipelines as pipelines_module
+from sciencebeam_pipelines.pipelines import (
     get_pipeline_expression_for_configuration,
     get_pipeline_for_configuration
 )
 
-DEFAULT_PIPELINE_MODULE = 'sciencebeam.pipelines.default_pipeline'
-PIPELINE_MODULE_1 = 'sciencebeam.pipelines.pipeline1'
-PIPELINE_MODULE_2 = 'sciencebeam.pipelines.pipeline2'
+DEFAULT_PIPELINE_MODULE = 'sciencebeam_pipelines.pipelines.default_pipeline'
+PIPELINE_MODULE_1 = 'sciencebeam_pipelines.pipelines.pipeline1'
+PIPELINE_MODULE_2 = 'sciencebeam_pipelines.pipelines.pipeline2'
 
 PIPELINE_1 = 'pipeline1'
 PIPELINE_2 = 'pipeline2'

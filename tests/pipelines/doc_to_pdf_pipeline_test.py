@@ -1,4 +1,4 @@
-from sciencebeam.pipelines.doc_to_pdf_pipeline import PIPELINE
+from sciencebeam_pipelines.pipelines.doc_to_pdf_pipeline import PIPELINE
 
 
 class TestPipeline:

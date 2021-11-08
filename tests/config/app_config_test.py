@@ -6,10 +6,10 @@ from unittest.mock import patch, MagicMock
 
 import pytest
 
-from sciencebeam.utils.config import dict_to_config
+from sciencebeam_pipelines.utils.config import dict_to_config
 
-from sciencebeam.config import app_config as app_config_module
-from sciencebeam.config.app_config import (
+from sciencebeam_pipelines.config import app_config as app_config_module
+from sciencebeam_pipelines.config.app_config import (
     get_app_config_filename,
     get_app_defaults_config_filename,
     read_app_config

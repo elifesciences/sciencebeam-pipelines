@@ -9,7 +9,7 @@ import requests
 from requests import Session
 from werkzeug.datastructures import MultiDict
 
-from sciencebeam.utils.config import parse_list
+from sciencebeam_pipelines.utils.config import parse_list
 
 
 LOGGER = logging.getLogger(__name__)

@@ -11,4 +11,4 @@ fi
 
 echo "setting version to \"${version}\""
 
-sed -i -e "s/^__version__ = .*/__version__ = \"${version}\"/g" sciencebeam/__init__.py
+sed -i -e "s/^__version__ = .*/__version__ = \"${version}\"/g" sciencebeam_pipelines/__init__.py

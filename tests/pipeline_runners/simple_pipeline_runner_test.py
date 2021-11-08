@@ -2,18 +2,20 @@ from unittest.mock import patch, MagicMock
 
 import pytest
 
-from sciencebeam.utils.config import dict_to_config
-from sciencebeam.utils.mime_type_constants import MimeTypes
+from sciencebeam_pipelines.utils.config import dict_to_config
+from sciencebeam_pipelines.utils.mime_type_constants import MimeTypes
 
-from sciencebeam.pipelines import FunctionPipelineStep, FieldNames, StepDataProps
+from sciencebeam_pipelines.pipelines import FunctionPipelineStep, FieldNames, StepDataProps
 
-from sciencebeam.pipeline_runners import simple_pipeline_runner as simple_pipeline_runner_module
-from sciencebeam.pipeline_runners.simple_pipeline_runner import (
+from sciencebeam_pipelines.pipeline_runners import (
+    simple_pipeline_runner as simple_pipeline_runner_module
+)
+from sciencebeam_pipelines.pipeline_runners.simple_pipeline_runner import (
     create_simple_pipeline_runner_from_config
 )
 
 
-DEFAULT_PIPELINE_MODULE = 'sciencebeam.pipelines.default_pipeline'
+DEFAULT_PIPELINE_MODULE = 'sciencebeam_pipelines.pipelines.default_pipeline'
 
 DEFAULT_CONFIG = {
     'pipelines': {

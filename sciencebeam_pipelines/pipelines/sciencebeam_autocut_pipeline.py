@@ -8,7 +8,7 @@ import requests
 from sciencebeam_utils.utils.collection import extend_dict
 from sciencebeam_utils.utils.xml import get_text_content
 
-from sciencebeam.utils.mime_type_constants import MimeTypes
+from sciencebeam_pipelines.utils.mime_type_constants import MimeTypes
 
 from . import Pipeline, RequestsPipelineStep
 

@@ -1,8 +1,8 @@
 import logging
 from typing import List, Set
 
-from sciencebeam.pipelines import PipelineStep
-from sciencebeam.pipelines import (
+from sciencebeam_pipelines.pipelines import PipelineStep
+from sciencebeam_pipelines.pipelines import (
     get_pipeline_for_configuration_and_args,
     add_pipeline_args,
     StepDataProps

@@ -29,16 +29,16 @@ from sciencebeam_utils.beam_utils.main import (
     process_cloud_args
 )
 
-from sciencebeam.config.app_config import get_app_config
+from sciencebeam_pipelines.config.app_config import get_app_config
 
-from sciencebeam.utils.logging import configure_logging
+from sciencebeam_pipelines.utils.logging import configure_logging
 
-from sciencebeam.pipelines import (
+from sciencebeam_pipelines.pipelines import (
     get_pipeline_for_configuration_and_args,
     add_pipeline_args
 )
 
-from sciencebeam.pipeline_runners.pipeline_runner_utils import (
+from sciencebeam_pipelines.pipeline_runners.pipeline_runner_utils import (
     add_batch_args,
     process_batch_args,
     encode_if_text_type,
@@ -187,7 +187,7 @@ def parse_args(pipeline, config, argv=None):
     process_batch_args(args)
     process_cloud_args(
         args, args.output_path,
-        name='sciencebeam-convert'
+        name='sciencebeam_pipelines-convert'
     )
 
     get_logger().info('args: %s', args)
