@@ -6,6 +6,9 @@ A set of tools to allow PDF to XML conversion, utilising [Apache Beam](https://b
 
 The aim of this project is to bring multiple tools together to generate a full XML document.
 
+This project, *ScienceBeam Pipelines*, is now mainly used for evaluation purpose of external tools.
+There is now [ScienceBeam Parser](https://github.com/elifesciences/sciencebeam-parser), which allows tigher integration of tools in order to improve results further.
+
 You might also be interested in the [ScienceBeam Gym](https://github.com/elifesciences/sciencebeam-gym), for the model training ground (the model is not yet integrated into the conversion pipeline).
 
 ## Status
