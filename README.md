@@ -1,5 +1,13 @@
 # ScienceBeam
 
+## ⚠️ Under new stewardship
+
+eLife have handed over stewardship of ScienceBeam to The Coko Foundation. You can now find the updated code repository at https://gitlab.coko.foundation/sciencebeam/sciencebeam-pipelines and continue the conversation on Coko's Mattermost chat server: https://mattermost.coko.foundation/
+
+For more information on why we're doing this read our latest update on our new technology direction: https://elifesciences.org/inside-elife/daf1b699/elife-latest-announcing-a-new-technology-direction
+
+## Overview
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 A set of tools to allow PDF to XML conversion, utilising [Apache Beam](https://beam.apache.org/) and other tools.
